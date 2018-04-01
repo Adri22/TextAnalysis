@@ -6,5 +6,14 @@ using System.Threading.Tasks;
 
 namespace TextAnalysis.Components {
     class Sentence {
+        private String sentence;
+        private Word[] words { get; }
+
+        public Sentence(String sentence) {
+            this.sentence = sentence;
+        }
+
+
+
     }
 }

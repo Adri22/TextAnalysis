@@ -12,16 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TextAnalysis.Components;
 
 namespace TextAnalysis {
     public partial class MainWindow : Window {
-
-
-
-
-
         public MainWindow() {
             InitializeComponent();
+
+            // test test test
+            String s = "Debuggen ist der Vorgang, ein Programm zu schreiben. Deshalb ist Programmierung der Vorgang, Fehler in ein Programm einzubauen. Es ist besser, weniger Fehler in ein Programm einzubauen. Das braucht nur Zeit, diese wieder zu entfernen";
+            Text text = new Text(s); // test
         }
     }
 }
