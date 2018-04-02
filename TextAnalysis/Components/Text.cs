@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace TextAnalysis.Components {
     class Text {
         private String text;
-        private Sentence[] sentences { get; }
-        // private Word[] words { get; }
+        public Sentence[] sentences { get; }
 
         public Text(String text) {
             this.text = text;
@@ -21,12 +20,38 @@ namespace TextAnalysis.Components {
                 }
 
                 this.sentences[i] = new Sentence(sentences[i]);
-
-                // Console.WriteLine(sentences[i]);
             }
         }
 
+        public Word[] GetAllWords() {
+            Word[] words;
+            int wordCounter = 0;
 
+            for(int i = 0; i < sentences.Length; i++) {
+                wordCounter += sentences[i].words.Length;
+            }
 
+            words = new Word[wordCounter];
+            wordCounter = 0;
+
+            for(int i = 0; i < sentences.Length; i++) {
+                for(int j = 0; j < sentences[i].words.Length; j++) {
+                    words[wordCounter + j] = sentences[i].words[j];
+                }
+                wordCounter += sentences[i].words.Length;
+            }
+
+            return words;
+        }
+
+        public String ToString() {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            for(int i = 0; i < sentences.Length; i++) {
+                stringBuilder.Append(sentences[i].ToString());
+            }
+
+            return stringBuilder.ToString();
+        }
     }
 }

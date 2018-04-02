@@ -22,6 +22,14 @@ namespace TextAnalysis {
             // test test test
             String s = "Debuggen ist der Vorgang, ein Programm zu schreiben. Deshalb ist Programmierung der Vorgang, Fehler in ein Programm einzubauen. Es ist besser, weniger Fehler in ein Programm einzubauen. Das braucht nur Zeit, diese wieder zu entfernen";
             Text text = new Text(s); // test
+
+            Word[] words = text.GetAllWords();
+
+            for(int i = 0; i < words.Length; i++) {
+                // Console.WriteLine(words[i].word);
+            }
+
+            Console.WriteLine(text.ToString());
         }
     }
 }
