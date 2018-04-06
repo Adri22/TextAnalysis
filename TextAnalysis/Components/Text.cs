@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TextAnalysis.Components {
     class Text {
-        private String text;
+        private String content;
         public Sentence[] sentences { get; }
 
-        public Text(String text) {
-            this.text = text;
-            String[] sentences = this.text.Split('.');
+        public Text(String content) {
+            this.content = content;
+            String[] sentences = this.content.Split('.');
             this.sentences = new Sentence[sentences.Length];
 
             for(int i = 0; i < sentences.Length; i++) {
@@ -44,7 +44,7 @@ namespace TextAnalysis.Components {
             return words;
         }
 
-        public String ToString() {
+        public override String ToString() {
             StringBuilder stringBuilder = new StringBuilder();
 
             for(int i = 0; i < sentences.Length; i++) {

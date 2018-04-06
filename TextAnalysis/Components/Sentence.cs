@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TextAnalysis.Components {
     class Sentence {
-        private String sentence;
+        private String content;
         public Word[] words { get; }
         private Char[] punctuations = new Char[] {
             ',', ':', ';', '?', '!' // TODO: add more?
         };
 
-        public Sentence(String sentence) {
-            this.sentence = sentence;
-            String[] words = this.sentence.Split(' ');
+        public Sentence(String content) {
+            this.content = content;
+            String[] words = this.content.Split(' ');
             this.words = new Word[words.Length];
 
             for(int i = 0; i < words.Length; i++) {
@@ -29,7 +29,7 @@ namespace TextAnalysis.Components {
             }
         }
 
-        public String ToString() {
+        public override String ToString() {
             StringBuilder stringBuilder = new StringBuilder();
 
             for(int i = 0; i < words.Length; i++) {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAnalysis.Components {
     class Word {
-        public String word { get; }
+        public String content { get; }
         private Char punctuationChar;
         private WordType type;
 
@@ -17,13 +17,13 @@ namespace TextAnalysis.Components {
             UNKNOWN
         }
 
-        public Word(String word) {
-            this.word = word;
+        public Word(String content) {
+            this.content = content;
             CheckType();
         }
 
-        public Word(String word, Char punctuationChar) {
-            this.word = word;
+        public Word(String content, Char punctuationChar) {
+            this.content = content;
             this.punctuationChar = punctuationChar;
             CheckType();
         }
@@ -32,7 +32,7 @@ namespace TextAnalysis.Components {
             // placeholder
         }
 
-        public String ToString() {
+        public override String ToString() {
             StringBuilder stringBuilder = new StringBuilder("<");
 
             switch(type) {
@@ -51,7 +51,7 @@ namespace TextAnalysis.Components {
                     break;
             }
 
-            stringBuilder.Append(" | " + word + ">");
+            stringBuilder.Append(" | " + content + ">");
             return stringBuilder.ToString();
         }
     }

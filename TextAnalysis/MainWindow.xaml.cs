@@ -26,10 +26,10 @@ namespace TextAnalysis {
             Word[] words = text.GetAllWords();
 
             for(int i = 0; i < words.Length; i++) {
-                // Console.WriteLine(words[i].word);
+                Console.WriteLine(words[i]);
             }
 
-            Console.WriteLine(text.ToString());
+            Console.WriteLine(text);
         }
     }
 }
