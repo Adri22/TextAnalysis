@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Dictionary>
+
+  <Articles>
+    <Article>der</Article>
+    <Article>die</Article>
+    <Article>das</Article>
+  </Articles>
+
+  <Verbs>
+    <Verb>essen</Verb>
+    <Verb>spielen</Verb>
+    <Verb>hüpfen</Verb>
+    <Verb>schlafen</Verb>
+    <Verb>kacken</Verb>
+    <Verb>schlagen</Verb>
+    <Verb>lesen</Verb>
+    <Verb>programmieren</Verb>
+    <Verb>testen</Verb>
+  </Verbs>
+
+</Dictionary>

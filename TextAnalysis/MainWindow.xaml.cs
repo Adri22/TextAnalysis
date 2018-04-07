@@ -26,10 +26,21 @@ namespace TextAnalysis {
             Word[] words = text.GetAllWords();
 
             for(int i = 0; i < words.Length; i++) {
-                Console.WriteLine(words[i]);
+                // Console.WriteLine(words[i]);
             }
 
-            Console.WriteLine(text);
+            // Console.WriteLine(text);
+
+            DictionaryHandler dh = new DictionaryHandler();
+
+            foreach(String article in dh.articleList) {
+                Console.WriteLine(article);
+            }
+
+            foreach(String verb in dh.verbList) {
+                Console.WriteLine(verb);
+            }
+
         }
     }
 }
