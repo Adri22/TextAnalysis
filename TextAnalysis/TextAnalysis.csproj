@@ -65,6 +65,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\Dictionary.cs" />
     <Compile Include="Components\DictionaryHandler.cs" />
     <Compile Include="Components\Sentence.cs" />
     <Compile Include="Components\Text.cs" />

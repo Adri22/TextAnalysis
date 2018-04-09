@@ -10,9 +10,8 @@ namespace TextAnalysis.Components {
     class DictionaryHandler {
         private String dictionaryPath;
         private XmlDocument xmlDocument;
+        private Dictionary dictionary;
         private Language language;
-        public List<String> articleList { get; }
-        public List<String> verbList { get; }
 
         public enum Language {
             DE, EN
@@ -21,24 +20,22 @@ namespace TextAnalysis.Components {
         public DictionaryHandler() : this(Language.DE) { }
 
         public DictionaryHandler(Language language) {
-            articleList = new List<String>();
-            verbList = new List<String>();
+            dictionary = new Dictionary();
             dictionaryPath = @"..\..\Resources\Dictionary_"; // TODO: create path with Directory-Class?
             ChangeLanguage(language);
         }
 
-        private void LoadDictionary() {
+        private void LoadDictionary(String path) {
             xmlDocument = new XmlDocument();
-            xmlDocument.Load(dictionaryPath + ".xml");
-            articleList.Clear();
-            verbList.Clear();
+            xmlDocument.Load(path + ".xml");
+            dictionary.ClearAll();
 
             foreach(XmlNode node in xmlDocument.DocumentElement.GetElementsByTagName("Article")) {
-                articleList.Add(node.InnerText);
+                dictionary.AddArticle(node.InnerText);
             }
 
             foreach(XmlNode node in xmlDocument.DocumentElement.GetElementsByTagName("Verb")) {
-                verbList.Add(node.InnerText);
+                dictionary.AddVerb(node.InnerText);
             }
         }
 
@@ -47,15 +44,17 @@ namespace TextAnalysis.Components {
 
             switch(this.language) {
                 case Language.EN:
-                    dictionaryPath += "EN";
+                    LoadDictionary(dictionaryPath + "EN");
                     break;
                 case Language.DE:
                 default:
-                    dictionaryPath += "DE";
+                    LoadDictionary(dictionaryPath + "DE");
                     break;
             }
+        }
 
-            LoadDictionary();
+        public Dictionary GetDictionary() {
+            return dictionary;
         }
     }
 }

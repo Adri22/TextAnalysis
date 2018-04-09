@@ -33,6 +33,23 @@ namespace TextAnalysis {
 
             DictionaryHandler dh = new DictionaryHandler();
 
+            Dictionary dic = dh.GetDictionary();
+
+            Console.WriteLine(dic.ContainsArticle("der"));
+
+            dh.ChangeLanguage(DictionaryHandler.Language.EN);
+
+            Console.WriteLine(dic.ContainsArticle("der"));
+            Console.WriteLine(dic.ContainsArticle("this"));
+
+
+            // dh.dictionary.
+
+            // DictionaryHandler.Dictionary dic = new DictionaryHandler.Dictionary();
+
+
+
+            /*
             foreach(String article in dh.articleList) {
                 Console.WriteLine(article);
             }
@@ -40,7 +57,7 @@ namespace TextAnalysis {
             foreach(String verb in dh.verbList) {
                 Console.WriteLine(verb);
             }
-
+            */
         }
     }
 }
