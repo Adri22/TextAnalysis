@@ -37,6 +37,10 @@ namespace TextAnalysis.Components {
             foreach(XmlNode node in xmlDocument.DocumentElement.GetElementsByTagName("Verb")) {
                 dictionary.AddVerb(node.InnerText);
             }
+
+            foreach(XmlNode node in xmlDocument.DocumentElement.GetElementsByTagName("Noun")) {
+                dictionary.AddNoun(node.InnerText);
+            }
         }
 
         public void ChangeLanguage(Language language) {

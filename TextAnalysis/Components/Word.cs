@@ -29,7 +29,7 @@ namespace TextAnalysis.Components {
         }
 
         private void CheckType() {
-            // placeholder
+
         }
 
         public override String ToString() {

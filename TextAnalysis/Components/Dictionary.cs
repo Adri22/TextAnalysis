@@ -8,10 +8,12 @@ namespace TextAnalysis.Components {
     class Dictionary {
         private List<String> articleList;
         private List<String> verbList;
+        private List<String> nounList;
 
         public Dictionary() {
             articleList = new List<string>();
             verbList = new List<string>();
+            nounList = new List<string>();
         }
 
         public void AddArticle(String article) {
@@ -22,9 +24,14 @@ namespace TextAnalysis.Components {
             verbList.Add(verb);
         }
 
+        public void AddNoun(String noun) {
+            nounList.Add(noun);
+        }
+
         public void ClearAll() {
             articleList.Clear();
             verbList.Clear();
+            nounList.Clear();
         }
 
         public bool ContainsArticle(String article) {
@@ -33,6 +40,10 @@ namespace TextAnalysis.Components {
 
         public bool ContainsVerb(String verb) {
             return verbList.Contains(verb) ? true : false;
+        }
+
+        public bool ContainsNoun(String noun) {
+            return nounList.Contains(noun) ? true : false;
         }
     }
 }

@@ -19,6 +19,7 @@ namespace TextAnalysis.Components {
 
             for(int i = 0; i < words.Length; i++) {
                 this.words[i] = new Word(words[i]);
+
                 for(int j = 0; j < punctuations.Length; j++) { // Punctuation-Handling
                     if(words[i].EndsWith(punctuations[j].ToString())) { // TODO: include prefix-handling?
                         words[i] = words[i].Remove(words[i].Length - 1, 1);
@@ -28,7 +29,7 @@ namespace TextAnalysis.Components {
                 }
             }
         }
-
+        
         public override String ToString() {
             StringBuilder stringBuilder = new StringBuilder();
 

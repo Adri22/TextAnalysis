@@ -26,11 +26,12 @@ namespace TextAnalysis {
             Word[] words = text.GetAllWords();
 
             for(int i = 0; i < words.Length; i++) {
-                // Console.WriteLine(words[i]);
+                Console.WriteLine(words[i].content);
             }
 
-            // Console.WriteLine(text);
+            Console.WriteLine(text);
 
+            /*
             DictionaryHandler dh = new DictionaryHandler();
 
             Dictionary dic = dh.GetDictionary();
@@ -41,7 +42,7 @@ namespace TextAnalysis {
 
             Console.WriteLine(dic.ContainsArticle("der"));
             Console.WriteLine(dic.ContainsArticle("this"));
-
+            */
 
             // dh.dictionary.
 
