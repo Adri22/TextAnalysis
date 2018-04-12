@@ -29,7 +29,7 @@ namespace TextAnalysis.Components {
                 }
             }
         }
-        
+
         public override String ToString() {
             StringBuilder stringBuilder = new StringBuilder();
 

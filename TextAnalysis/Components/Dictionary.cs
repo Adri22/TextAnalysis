@@ -10,6 +10,13 @@ namespace TextAnalysis.Components {
         private List<String> verbList;
         private List<String> nounList;
 
+        public enum WordType {
+            ARTICLE,
+            VERB,
+            NOUN,
+            UNKNOWN
+        }
+
         public Dictionary() {
             articleList = new List<string>();
             verbList = new List<string>();
@@ -34,6 +41,11 @@ namespace TextAnalysis.Components {
             nounList.Clear();
         }
 
+        public WordType GetTypeOfWord(String word) {
+            return WordType.UNKNOWN; // test
+        }
+
+        /*
         public bool ContainsArticle(String article) {
             return articleList.Contains(article) ? true : false;
         }
@@ -45,5 +57,6 @@ namespace TextAnalysis.Components {
         public bool ContainsNoun(String noun) {
             return nounList.Contains(noun) ? true : false;
         }
+        */
     }
 }

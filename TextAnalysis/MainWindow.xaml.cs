@@ -19,6 +19,8 @@ namespace TextAnalysis {
         public MainWindow() {
             InitializeComponent();
 
+            DictionaryHandler dictionaryHandler = new DictionaryHandler();
+
             // test test test
             String s = "Debuggen ist der Vorgang, ein Programm zu schreiben. Deshalb ist Programmierung der Vorgang, Fehler in ein Programm einzubauen. Es ist besser, weniger Fehler in ein Programm einzubauen. Das braucht nur Zeit, diese wieder zu entfernen";
             Text text = new Text(s); // test

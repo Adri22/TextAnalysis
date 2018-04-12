@@ -20,7 +20,7 @@ namespace TextAnalysis.Components {
         public DictionaryHandler() : this(Language.DE) { }
 
         public DictionaryHandler(Language language) {
-            dictionary = new Dictionary();
+            dictionary = new Dictionary(); // TODO: create singleton?
             dictionaryPath = @"..\..\Resources\Dictionary_"; // TODO: create path with Directory-Class?
             ChangeLanguage(language);
         }

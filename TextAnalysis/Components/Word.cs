@@ -7,45 +7,35 @@ using System.Threading.Tasks;
 namespace TextAnalysis.Components {
     class Word {
         public String content { get; }
+        private Dictionary.WordType type;
+        private Dictionary dictionary; // TODO: initialize / get instance
         private Char punctuationChar;
-        private WordType type;
-
-        private enum WordType {
-            ARTICLE,
-            VERB,
-            NOUN,
-            UNKNOWN
-        }
 
         public Word(String content) {
             this.content = content;
-            CheckType();
+            type = dictionary.GetTypeOfWord(this.content);
         }
 
         public Word(String content, Char punctuationChar) {
             this.content = content;
             this.punctuationChar = punctuationChar;
-            CheckType();
-        }
-
-        private void CheckType() {
-
+            type = dictionary.GetTypeOfWord(this.content);
         }
 
         public override String ToString() {
             StringBuilder stringBuilder = new StringBuilder("<");
 
             switch(type) {
-                case WordType.ARTICLE:
+                case Dictionary.WordType.ARTICLE:
                     stringBuilder.Append("Article");
                     break;
-                case WordType.VERB:
+                case Dictionary.WordType.VERB:
                     stringBuilder.Append("Verb");
                     break;
-                case WordType.NOUN:
+                case Dictionary.WordType.NOUN:
                     stringBuilder.Append("Noun");
                     break;
-                case WordType.UNKNOWN:
+                case Dictionary.WordType.UNKNOWN:
                 default:
                     stringBuilder.Append("Unknown");
                     break;
