@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAnalysis.Components {
     class Dictionary {
+        private static Dictionary instance;
         private List<String> articleList;
         private List<String> verbList;
         private List<String> nounList;
@@ -17,10 +18,17 @@ namespace TextAnalysis.Components {
             UNKNOWN
         }
 
-        public Dictionary() {
+        private Dictionary() {
             articleList = new List<string>();
             verbList = new List<string>();
             nounList = new List<string>();
+        }
+
+        public static Dictionary GetInstance() {
+            if(instance == null) {
+                instance = new Dictionary();
+            }
+            return instance;
         }
 
         public void AddArticle(String article) {
@@ -42,21 +50,15 @@ namespace TextAnalysis.Components {
         }
 
         public WordType GetTypeOfWord(String word) {
-            return WordType.UNKNOWN; // test
+            if(articleList.Contains(word)) {
+                return WordType.ARTICLE;
+            } else if(verbList.Contains(word)) {
+                return WordType.VERB;
+            } else if(nounList.Contains(word)) {
+                return WordType.NOUN;
+            } else {
+                return WordType.UNKNOWN;
+            }
         }
-
-        /*
-        public bool ContainsArticle(String article) {
-            return articleList.Contains(article) ? true : false;
-        }
-
-        public bool ContainsVerb(String verb) {
-            return verbList.Contains(verb) ? true : false;
-        }
-
-        public bool ContainsNoun(String noun) {
-            return nounList.Contains(noun) ? true : false;
-        }
-        */
     }
 }

@@ -8,15 +8,17 @@ namespace TextAnalysis.Components {
     class Word {
         public String content { get; }
         private Dictionary.WordType type;
-        private Dictionary dictionary; // TODO: initialize / get instance
+        private Dictionary dictionary;
         private Char punctuationChar;
 
         public Word(String content) {
+            dictionary = Dictionary.GetInstance();
             this.content = content;
             type = dictionary.GetTypeOfWord(this.content);
         }
 
         public Word(String content, Char punctuationChar) {
+            dictionary = Dictionary.GetInstance();
             this.content = content;
             this.punctuationChar = punctuationChar;
             type = dictionary.GetTypeOfWord(this.content);

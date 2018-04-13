@@ -20,9 +20,9 @@ namespace TextAnalysis.Components {
         public DictionaryHandler() : this(Language.DE) { }
 
         public DictionaryHandler(Language language) {
-            dictionary = new Dictionary(); // TODO: create singleton?
+            dictionary = Dictionary.GetInstance();
             dictionaryPath = @"..\..\Resources\Dictionary_"; // TODO: create path with Directory-Class?
-            ChangeLanguage(language);
+            this.language = language;
         }
 
         private void LoadDictionary(String path) {
@@ -45,8 +45,11 @@ namespace TextAnalysis.Components {
 
         public void ChangeLanguage(Language language) {
             this.language = language;
+            FillDictionary();
+        }
 
-            switch(this.language) {
+        public void FillDictionary() {
+            switch(language) {
                 case Language.EN:
                     LoadDictionary(dictionaryPath + "EN");
                     break;

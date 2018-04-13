@@ -20,6 +20,7 @@ namespace TextAnalysis {
             InitializeComponent();
 
             DictionaryHandler dictionaryHandler = new DictionaryHandler();
+            dictionaryHandler.FillDictionary();
 
             // test test test
             String s = "Debuggen ist der Vorgang, ein Programm zu schreiben. Deshalb ist Programmierung der Vorgang, Fehler in ein Programm einzubauen. Es ist besser, weniger Fehler in ein Programm einzubauen. Das braucht nur Zeit, diese wieder zu entfernen";
@@ -32,35 +33,6 @@ namespace TextAnalysis {
             }
 
             Console.WriteLine(text);
-
-            /*
-            DictionaryHandler dh = new DictionaryHandler();
-
-            Dictionary dic = dh.GetDictionary();
-
-            Console.WriteLine(dic.ContainsArticle("der"));
-
-            dh.ChangeLanguage(DictionaryHandler.Language.EN);
-
-            Console.WriteLine(dic.ContainsArticle("der"));
-            Console.WriteLine(dic.ContainsArticle("this"));
-            */
-
-            // dh.dictionary.
-
-            // DictionaryHandler.Dictionary dic = new DictionaryHandler.Dictionary();
-
-
-
-            /*
-            foreach(String article in dh.articleList) {
-                Console.WriteLine(article);
-            }
-
-            foreach(String verb in dh.verbList) {
-                Console.WriteLine(verb);
-            }
-            */
         }
     }
 }
